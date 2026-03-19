@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eid Mubarak | Magical Greetings</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eid Mubarak | Magical Celebrations</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="stars"></div>
-    <div class="twinkling"></div>
-    <canvas id="fireworksCanvas"></canvas>
-    
-    <div class="lantern-container">
-        <div class="lantern"></div>
-        <div class="lantern"></div>
+<!-- Background Effects -->
+<div class="stars"></div>
+<div class="twinkling"></div>
+<canvas id="fireworksCanvas"></canvas>
+
+<!-- Lanterns -->
+<div class="lantern-container">
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+</div>
+
+<!-- Login Dashboard -->
+<main class="hero" id="loginDashboard">
+    <div class="moon"></div>
+    <h1 class="glow-text">Login Here If You Want A Surprise🌙</h1>
+    <p class="sub-text">Enter your name and birth month & day to get a special Eid greeting!</p>
+
+    <div class="input-group">
+        <input type="text" id="userName" placeholder="Enter Your Name">
+        <input type="text" id="userMonthDay" placeholder="MM-DD (e.g. 03-19)">
+        <button onclick="loginUser()" class="btn-primary">Login</button>
+    </div>
+</main>
+
+<!-- Eid Celebration Dashboard -->
+<div id="celebrationDashboard" class="celebration-dashboard" style="display:none;">
+    <div class="detailed-wishes">
+        <h2 id="personalGreeting" class="glow-text">Eid Mubarak!</h2>
+        <p id="wishMessage" class="sub-text">May your life be full of happiness, peace, and prosperity!</p>
+        <p class="from-text">From Abdul Basit...</p>
     </div>
 
-    <main class="hero">
-        <div class="moon"></div>
-        
-        <h1 class="glow-text">Eid Ul Fitr Mubarak 🌙</h1>
-        <p class="sub-text">Wishing you a life full of happiness, peace, and prosperity.</p>
-
-        <div class="input-group">
-            <input type="text" id="userName" placeholder="His name who have sent you the link...">
-            <button onclick="generateWish()" class="btn-primary">Open My Eid Wish</button>
-        </div>
-
-        <div class="audio-control">
-            <button id="musicBtn" onclick="toggleMusic()">🎵 Play Soft Nasheed</button>
-            <audio id="eidMusic" loop>
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-            </audio>
-        </div>
-    </main>
-
-    <div id="wishModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="card-art"></div>
-            <h2 id="personalGreeting">Eid Mubarak!</h2>
-            <p>"May the guidance and blessings of Allah be with you and your family always."</p>
-            <div class="decoration">✨ 🌙 ✨</div>
-        </div>
+    <div class="celebration-options">
+        <button class="btn-primary" onclick="triggerFireworks()">🎆 Fireworks</button>
+        <button class="btn-primary" onclick="triggerFlowers()">🌸 Flowers</button>
+        <button class="btn-primary" onclick="triggerStars()">✨ Stars</button>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<!-- Music Control -->
+<div class="audio-control" id="musicControl" style="display:none;">
+    <button id="musicBtn" onclick="toggleMusic()">🎵 Play Soft Nasheed</button>
+    <audio id="eidMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
